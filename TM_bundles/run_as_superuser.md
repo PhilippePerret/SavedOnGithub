@@ -40,3 +40,25 @@
         puts "DATA_SUPER_USER doit être défini, comme table contenant :password, le mot de passe pour la session d'ordinateur courante."
       end
     end
+
+##Exemple de code
+
+Dans un fichier de nom quelconque (par exemple `_main_.rb`) placé n'importe où mais dans la hiérarchie du site testé.
+
+    =begin
+
+    Test automatique
+
+    Pour lancer le test : CMD + ALT + R
+
+    =end
+
+    MODE_TESTS = true
+    require './_Docs/tests/lib/required.rb'
+
+    # Messages retournés
+    # ------------------
+    puts "Dossier courant : #{Dir.pwd}"
+    puts "Salut tout le monde !", BLUE
+    puts "Salut tout le monde !", RED
+    puts "Salut tout le monde !", GREEN

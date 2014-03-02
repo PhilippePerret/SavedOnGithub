@@ -35,8 +35,9 @@ Dans TextMate :
 
 *Note&nbsp;: `./` ci-dessous correspond à la racine du site à tester.*
 
-* **Le dossier `./tests/`** contenant les libraires et les tests. *Cf. le dossier dans l'atelier Icare version "Ruby"*.
-* **Le fichier `./data/secret/data_su.rb`** définissant au moins DATA_SUPER_USER[:password].
+* **Le dossier `./tests/`** contenant les libraires et les tests. *Cf. le dossier dans l'atelier Icare version "Ruby"*&nbsp;;
+* **Le fichier `./tests/_main_.rb`** qui lance les tests. *Cf. le dossier dans l'atelier Icare version "Ruby"*&nbsp;;
+* **Le fichier `./data/secret/data_su.rb`** définissant au moins DATA_SUPER_USER[:password]&nbsp;;
 * **La définition de FILES_OWNER_WWW** dans `./tests/lib/files_owner_www.rb` pour savoir quels fichiers/dossiers doivent retrouver le propriétaire `_www` après les tests (ce sont les dossiers et fichiers qui sont utilisés — write — par l'application).
 
 <a name="command_code"></a>
@@ -49,7 +50,7 @@ Dans TextMate :
         require './data/secret/data_su'
         if defined?(DATA_SUPER_USER)
           file_path = ENV['TM_FILEPATH']
-          puts `echo "#{DATA_SUPER_USER[:password]}" | sudo -S ruby -e "require '#{file_path}'"`
+          puts `echo "#{DATA_SUPER_USER[:password]}" | sudo -S ruby -e "require './tests/_main_.rb'"`
         else
           puts "DATA_SUPER_USER doit être défini, comme table contenant :password, le mot de passe pour la session d'ordinateur courante."
         end

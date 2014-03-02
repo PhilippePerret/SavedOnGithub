@@ -1,0 +1,1 @@
+Ce dépôt contient tout un tas de truc à conserver et partager sur Github.

@@ -48,11 +48,11 @@ Dans TextMate :
     Dir.chdir(ENV['TM_PROJECT_DIRECTORY']) do
       begin
         require './data/secret/data_su'
-        if defined?(DATA_SUPER_USER)
+        if defined?(DATA_SU)
           file_path = ENV['TM_FILEPATH']
-          puts `echo "#{DATA_SUPER_USER[:password]}" | sudo -S ruby -e "require './tests/_main_.rb'"`
+          puts `echo "#{DATA_SU[:password]}" | sudo -S ruby -e "require './tests/_main_.rb'"`
         else
-          puts "DATA_SUPER_USER doit être défini, comme table contenant :password, le mot de passe pour la session d'ordinateur courante."
+          puts "DATA_SU doit être défini, comme table contenant :password, le mot de passe pour la session d'ordinateur courante."
         end
       rescue Exception => e
         puts e.message, RED
@@ -64,7 +64,7 @@ Dans TextMate :
           FILES_OWNER_WWW.each do |path|
             fullpath = File.join('.', path)
             cmd = File.directory?(fullpath) ? 'chown -R' : 'chown'
-            `echo "#{DATA_SUPER_USER[:password]}" | sudo -S #{cmd} _www '#{fullpath}'`
+            `echo "#{DATA_SU[:password]}" | sudo -S #{cmd} _www '#{fullpath}'`
           end
         else
           puts "FILES_OWNER_WWW must be defined in ./tests/lib/required.rb (due to know which files own to _www)"

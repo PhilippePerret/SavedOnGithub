@@ -54,7 +54,7 @@ Infos :
     Key equivalent    - aucune -
     
     Name              List Folder Distant File
-    Key equivalent    - aucune -
+    Key equivalent    CMD + MAJ + L
     
     
     Scope selector    source.ruby, source.css, source.js, source.yaml, text.html.markdown

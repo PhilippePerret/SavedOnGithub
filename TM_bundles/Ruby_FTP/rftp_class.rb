@@ -29,9 +29,10 @@ class RFTP
         error :data_file_required unless data_ftp_exists?
         error :data_required      unless required_data_ok?
       end
-      # proceed_operation :upload
-      # proceed_operation :remove
+      # On procède à l'opération
       proceed_operation operation
+      
+      puts "\n\n\n" # pour laisser de l'air
     end
     
     # Procède à l'opération FTP voulue

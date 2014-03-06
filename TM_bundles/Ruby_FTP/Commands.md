@@ -2,7 +2,9 @@
 
 Permet d'uploader/détruire le fichier courant sur un site distant.
 
-Créer un Bundle `_Phil : RFTP`.
+* Créer un Bundle `_Phil : RFTP`.
+* Placer dans ce bundle (./Library/Application Support/Avian/bundles/) un dossier `Support` et y placer le fichier `rftp_class.rb`.
+* Créer les trois commandes ci-dessous.
 
 # Command “Upload”
 
@@ -55,7 +57,7 @@ Infos :
     Key equivalent    - aucune -
     
     
-    Scope selector    source.ruby, source.css, source.js, source.yaml
+    Scope selector    source.ruby, source.css, source.js, source.yaml, text.html.markdown
     Tab trigger       ---
     Save              Nothing
     Input             Nothing

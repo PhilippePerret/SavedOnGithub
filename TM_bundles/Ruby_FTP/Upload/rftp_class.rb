@@ -9,6 +9,18 @@ class RFTP
     # 
     # Upload du fichier courant
     def upload
+      operate :upload
+    end
+    # Remove du fichier courant
+    def remove
+      operate :remove
+    end
+    # Listing du dossier où se trouve le fichier courant
+    def list
+      operate :list_folder
+    end
+    
+    def operate operation
       # On se place sur le dossier racine
       puts_infos_courante
       Dir.chdir(project_folder) do
@@ -19,7 +31,7 @@ class RFTP
       end
       # proceed_operation :upload
       # proceed_operation :remove
-      proceed_operation :list_folder
+      proceed_operation operation
     end
     
     # Procède à l'opération FTP voulue
@@ -208,4 +220,4 @@ RFTP_DATA = {
   end # / class << self
 end
 
-RFTP::upload
+
